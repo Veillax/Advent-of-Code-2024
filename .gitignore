@@ -1,6 +1,6 @@
 # User Defined
 *.json
-.setup/*
+setup/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
