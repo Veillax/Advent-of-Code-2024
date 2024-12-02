@@ -1,16 +1,3 @@
-from collections import Counter
-
-def compare(left_list, right_list):
-    """Calculates the similarity score between two lists."""
-
-    right_counts = Counter(right_list)  # Count occurrences in the right list
-    score = 0
-
-    for num in left_list:
-        score += num * right_counts[num]
-
-    return score
-
 left_list, right_list = [], []
 
 f = open("input.txt", "r", encoding="utf-8")
@@ -23,4 +10,8 @@ for line_number, line in enumerate(f.readlines(), 1):  # Start line numbering fr
 left_list.sort()
 right_list.sort()
 
-print(f"\n{compare(left_list, right_list)}")
+total_distance = 0
+for i in range(len(left_list)):
+    total_distance += abs(left_list[i] - right_list[i])
+
+print("\n" + str(total_distance))
